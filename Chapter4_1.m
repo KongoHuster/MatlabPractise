@@ -1,0 +1,9 @@
+I0=imread('1.jpg'); 
+I=imnoise(I0,'gaussian',0,0.01); 
+J=imnoise(I0,'salt & pepper',0.02); 
+ws=1; %´°¿Ú´óÐ¡ 
+w=double(ones(ws)./(ws*ws)); 
+Iav=uint8(filter2(w,I)); 
+Jav=uint8(filter2(w,I)); 
+Imed=medfilt2(I); 
+Jmed=medfilt2(J);
